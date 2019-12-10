@@ -4,9 +4,9 @@ Estimate of time needed to complete: 3hrs
 
 Start time: 9:20am
 
-Finish time: 
+Finish time: 13:30
 
-Actual time needed to complete: 
+Actual time needed to complete: 4hrs10mins
 
 
 ---------
@@ -21,6 +21,8 @@ It is an app that allows users to explore their area. With the app people can fi
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+Get the necessary codebase, run nodemon
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
