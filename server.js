@@ -47,12 +47,12 @@ function searchWeather() {
 
   for (let i = 0; i < darkskyDataResults.length; i++) {
 
-    weatherArray.push(darkskyDataResults[i])
+    weatherArray.push(new Weather(darkskyDataResults[i]))
   }
   return weatherArray;
 }
 
-function Weather(darkskyData) {
+function Weather(darkskyDataResults) {
   this.time = darkskyDataResults.time
   this.forecast = darkskyDataResults.summary
 }
@@ -65,7 +65,6 @@ function Weather(darkskyData) {
 // }
 
 // function error() { }
-
 
 // 404
 app.get('*', (request, response) => {
