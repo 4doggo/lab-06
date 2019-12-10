@@ -21,21 +21,40 @@ function searchLatToLong(city) {
   const geoDataResults = geoData.results[0]
 
   const locationObj = new Location(city, geoDataResults);
-  // const locationObj = {
-  //   "search_query": city,
-  //   "formatted_query": geoDataResults.formatted_query,
-  //   "latitude": geoDataResults.geometry.location.lat,
-  //   "longitude": geoDataResults.geometry.location.lng,
-  // }
   return locationObj;
 }
-
 
 function Location(city, geoDataResults) {
   this.search_query = city;
   this.formatted_query = geoDataResults.formatted_query;
   this.latitude = geoDataResults.geometry.location.lat;
   this.longitude = geoDataResults.geometry.location.lng;
+}
+
+// weather
+
+app.get('/weather', (request, response) => {
+
+  let weatherObj = searchWeather();
+
+  response.send(weatherObj);
+})
+
+function searchWeather() {
+  const darkskyData = require('./data/darksky.json');
+  const darkskyDataResults = darkskyData.daily.data
+  const weatherArray = []
+
+  for (let i = 0; i < darkskyDataResults.length; i++) {
+
+    weatherArray.push(darkskyDataResults[i])
+  }
+  return weatherArray;
+}
+
+function Weather(darkskyData) {
+  this.time = darkskyDataResults.time
+  this.forecast = darkskyDataResults.summary
 }
 
 
