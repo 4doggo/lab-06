@@ -57,7 +57,17 @@ function Weather(darkskyData) {
   this.forecast = darkskyDataResults.summary
 }
 
+// 500
+// app.get('*', (request, response) => {
+//   response.status(500).send('Sorry, something went wrong');
 
+//   let errorQuery = error()
+// }
+
+// function error() { }
+
+
+// 404
 app.get('*', (request, response) => {
   response.status(404).send('Page not found');
 })
